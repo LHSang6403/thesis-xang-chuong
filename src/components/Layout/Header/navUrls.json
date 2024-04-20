@@ -5,6 +5,11 @@
     "permission": ""
   },
   {
+    "name": "Carousel",
+    "url": "/carousel",
+    "permission": ""
+  },
+  {
     "name": "Write",
     "url": "/write",
     "permission": ""
