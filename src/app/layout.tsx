@@ -2,7 +2,7 @@ import { GeistSans } from "geist/font/sans";
 import "@app/styles/globals.css";
 import "@app/styles/prosemirror.css";
 import NavDrawer from "@components/Layout/Drawer/NavDrawer";
-import ThemeProvider from "@components/Providers/ThemeProvider";
+import Providers from "@components/Providers/Providers";
 
 export const metadata = {
   title: "Web3 Grad. Thesis",
@@ -23,12 +23,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="bg-background text-foreground">
-        <ThemeProvider>
+        <Providers>
           <main className="mx-auto flex min-h-screen w-screen max-w-[2200px] flex-col items-center overflow-hidden">
             {children}
             <NavDrawer />
           </main>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
