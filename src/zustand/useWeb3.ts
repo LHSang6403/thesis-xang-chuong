@@ -39,8 +39,11 @@ export const useWeb3 = create((set, get) => ({
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       try {
         await provider.send("eth_requestAccounts", []);
+
         const signer = provider.getSigner();
+
         const walletAddress = await signer.getAddress();
+
         set({ isConnected: true, keepDisconnect: false, walletAddress });
       } catch (error) {
         console.error("Error connecting to blockchain:", error);
@@ -54,7 +57,7 @@ export const useWeb3 = create((set, get) => ({
   init: async () => {
     if (!window || !("ethereum" in window) || !window.ethereum) {
       console.log("No window.ethereum found");
-      return;
+      toast.error("Please install Metamask to connect to the blockchain.");
     }
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -91,6 +94,7 @@ export const useWeb3 = create((set, get) => ({
       set({ nftContract, marketplaceContract, isInit: true });
     } catch (error) {
       console.error("Error initializing contracts:", error);
+      toast.error("Failed to initialize contracts.");
     }
   },
 }));
