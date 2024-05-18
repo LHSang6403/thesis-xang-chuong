@@ -2,8 +2,9 @@
 
 import { Toaster } from "sonner";
 import { ThemeProvider, useTheme } from "next-themes";
-import { useWeb3 } from "@/zustand/useWeb3";
+import { useWeb3, UseWeb3Type } from "@/zustand/useWeb3";
 import { useEffect } from "react";
+import { ethers } from "ethers";
 
 const ToasterProvider = () => {
   const { theme } = useTheme() as {
@@ -13,7 +14,15 @@ const ToasterProvider = () => {
 };
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  // const { setAccount, setChainId, setWeb3 } = useWeb3();
+  const { init, isInit } = useWeb3() as UseWeb3Type;
+
+  useEffect(() => {
+    if (!window || !("ethereum" in window) || isInit) {
+      return;
+    }
+
+    init();
+  }, [ethers]);
 
   return (
     <ThemeProvider attribute="class">
