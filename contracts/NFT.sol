@@ -23,7 +23,7 @@ contract NFT is ERC721Enumerable, ERC721URIStorage {
 
     _tokenIds.increment();
 
-    console.log("Token ID: %s", tokenId, to);
+    console.log("Minted token ID: %s", tokenId, to);
 
     return tokenId;
   }
