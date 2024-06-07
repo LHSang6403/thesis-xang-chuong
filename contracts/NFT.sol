@@ -10,8 +10,11 @@ contract NFT is ERC721Enumerable, ERC721URIStorage {
   using Counters for Counters.Counter;
 
   Counters.Counter private _tokenIds;
+  address marketplaceAddress;
 
-  constructor() ERC721("NFT", "NFT") {}
+  constructor(address _marketplaceAddress) ERC721("NFT", "NFT") {
+    marketplaceAddress = _marketplaceAddress;
+  }
 
   function giveAway(address to) public returns (uint256) {
     uint tokenId = _tokenIds.current();
@@ -20,6 +23,7 @@ contract NFT is ERC721Enumerable, ERC721URIStorage {
 
     _safeMint(to, tokenId);
     _setTokenURI(tokenId, mockTokenURI);
+    setApprovalForAll(marketplaceAddress, true);
 
     _tokenIds.increment();
 

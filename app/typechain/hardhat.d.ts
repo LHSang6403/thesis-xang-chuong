@@ -54,9 +54,9 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC165__factory>;
     getContractFactory(
-      name: "Lock",
+      name: "Marketplace",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Lock__factory>;
+    ): Promise<Contracts.Marketplace__factory>;
     getContractFactory(
       name: "NFT",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -113,10 +113,10 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IERC165>;
     getContractAt(
-      name: "Lock",
+      name: "Marketplace",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.Lock>;
+    ): Promise<Contracts.Marketplace>;
     getContractAt(
       name: "NFT",
       address: string | ethers.Addressable,
@@ -164,9 +164,9 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IERC165>;
     deployContract(
-      name: "Lock",
+      name: "Marketplace",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Lock>;
+    ): Promise<Contracts.Marketplace>;
     deployContract(
       name: "NFT",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -223,10 +223,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IERC165>;
     deployContract(
-      name: "Lock",
+      name: "Marketplace",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Lock>;
+    ): Promise<Contracts.Marketplace>;
     deployContract(
       name: "NFT",
       args: any[],

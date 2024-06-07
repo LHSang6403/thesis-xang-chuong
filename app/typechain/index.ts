@@ -26,7 +26,7 @@ export type { ERC165 } from "./@openzeppelin/contracts/utils/introspection/ERC16
 export { ERC165__factory } from "./factories/@openzeppelin/contracts/utils/introspection/ERC165__factory";
 export type { IERC165 } from "./@openzeppelin/contracts/utils/introspection/IERC165";
 export { IERC165__factory } from "./factories/@openzeppelin/contracts/utils/introspection/IERC165__factory";
-export type { Lock } from "./contracts/Lock";
-export { Lock__factory } from "./factories/contracts/Lock__factory";
+export type { Marketplace } from "./contracts/Marketplace";
+export { Marketplace__factory } from "./factories/contracts/Marketplace__factory";
 export type { NFT } from "./contracts/NFT";
 export { NFT__factory } from "./factories/contracts/NFT__factory";
