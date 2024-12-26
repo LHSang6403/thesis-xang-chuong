@@ -48,6 +48,14 @@ def splitData():
 
   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
+  X_train_df = pd.DataFrame(X_train.reshape(X_train.shape[0], -1))
+  print("20 dòng cuối của tập X_train:")
+  print(X_train_df.tail(20).to_string(index=False))
+
+  X_test_df = pd.DataFrame(X_test.reshape(X_test.shape[0], -1))
+  print("20 dòng cuối của tập X_test:")
+  print(X_test_df.tail(20).to_string(index=False))
+
   return X_train, X_test, y_train, y_test, scaler, data
 
 print(splitData())
